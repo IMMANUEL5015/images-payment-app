@@ -5,6 +5,7 @@ const paymentSchema = mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Image'
     },
+    reference: String,
     createdAt: {type: Date, default: Date.now}
 });
 

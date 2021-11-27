@@ -14,7 +14,7 @@ function payWithPaystack(image) {
     },
 
     callback: function(response){
-      let message = 'Your payment is being processed!'
+      let message = 'Your payment was successful!'
       alert(message);
     }
 

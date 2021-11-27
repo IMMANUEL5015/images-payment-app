@@ -1,0 +1,32 @@
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+section.hero{
+    color: black;
+    background-color: pink;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    padding: 10px 30px 55px 30px;
+    box-sizing: border-box;
+}
+
+section.hero h1{
+    font-size: 2rem;
+}
+
+section.hero p{
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+section.hero a{
+    text-decoration: none;
+    cursor: pointer;
+    background-color: purple;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+}

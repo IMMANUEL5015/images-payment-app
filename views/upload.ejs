@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/upload.css"/>
+    <title>Upload</title>
+</head>
+<body>
+    <section class="hero">
+        <h1>Upload Images</h1>
+        <p>Hi there. Welcome to images purchase shop. If you have a high quality image for sale, please upload it.</p>
+        <a href="/">Back to Home</a>
+    </section>
+
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="price">Enter Image Price: </label>
+
+            <input class="price" type="number" id="price" name="price" required/>
+        </div>
+
+        <div class="form-group">
+            <label for="image">Upload Image File: </label>
+            <input type="file" name="image" id="image" required accept="image/*"/>
+        </div>
+
+        <div class="form-group">
+            <label for="description">Enter Image Description: </label>
+            <textarea name="description" id="description"> </textarea>
+        </div>
+
+        <button>Submit</button>
+    </form>
+</body>
+</html>

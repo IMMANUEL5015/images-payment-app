@@ -1,0 +1,80 @@
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+section.hero{
+    color: black;
+    background-color: pink;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    padding: 10px 30px 55px 30px;
+    box-sizing: border-box;
+}
+
+section.hero h1{
+    font-size: 2rem;
+}
+
+section.hero p{
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+section.hero a{
+    text-decoration: none;
+    cursor: pointer;
+    background-color: purple;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+form{
+    background-color: pink;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-radius: 10px;
+}
+
+.form-group{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.form-group .price{
+    width: 60%;
+    height: 30px;
+}
+
+.form-group label{
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.form-group textarea{
+    width: 60%;
+    height: 100px;
+}
+
+form button{
+    cursor: pointer;
+    background-color: purple;
+    color: white;
+    padding: 10px 40px;
+    border-radius: 10px;
+    border: none;
+    font-size: 1.2rem;
+}

@@ -19,5 +19,16 @@
             <a href="/payments">View Payment Records</a>
         </div>
     </section>
+
+    <section class="images">
+        <% images.forEach(function(image){ %>
+            <div>
+                <img src="<%= image.link %>" alt=""/>
+                <p>Price: <%= image.price %></p>
+                <button>Buy Now</button>
+            </div>
+
+        <% }); %>
+    </section>
 </body>
 </html>

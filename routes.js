@@ -6,7 +6,7 @@ router.get('/', image.fetchImages);
 router.get('/upload', (req, res) => {
     return res.render('upload');
 });
-router.post('/upload', image.upload, image.createImage);
+router.post('/upload', image.upload(), image.createImage);
 
 router.get('/payments', (req, res) => {
     return res.render('payments');

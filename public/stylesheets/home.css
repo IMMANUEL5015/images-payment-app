@@ -11,6 +11,7 @@ section.hero{
     border-radius: 10px;
     padding: 10px 30px 55px 30px;
     box-sizing: border-box;
+    margin-top: 30px;
 }
 
 section.hero h1{
@@ -30,4 +31,45 @@ section.hero a{
     padding: 10px;
     border-radius: 10px;
     margin-right: 10px;
+}
+
+.images{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.images div{
+    border: 1px solid grey;
+    border-radius: 5px;
+    height: 370px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: pink;
+    font-weight: bold;
+}
+
+.images div button{
+    background-color: purple;
+    padding: 5px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    box-sizing: border-box;
+}
+
+.images img{
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 5px;
 }

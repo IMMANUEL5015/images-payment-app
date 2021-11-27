@@ -1,43 +1,53 @@
+const path = require('path');
 const Image = require('../models/image');
 const multer = require('multer');
 const AWS = require('aws-sdk');
-
-const storage = multer.memoryStorage({
-    destination: function (req, file, callback) {
-        callback(null, '');
-    }
-});
+const multerS3 = require('multer-s3');
 
 const s3 = new AWS.S3({
     accessKeyId: process.env.AWS_ID,
-    secretAccessKey: process.env.AWS_SECRET
+    secretAccessKey: process.env.AWS_SECRET,
+    region: process.env.AWS_REGION,
+    apiVersion: "2010-12-01"
 });
 
-exports.upload = multer(storage).single('image');
+const uploadDetails = {
+    style: 'single', acl: 'public-read', folder: 'other-images', fieldName: 'image',
+    fileSize: { fileSize: 500000 }
+}
 
-exports.createImage = (req, res, next) => {
-    const params = {
-        Bucket: process.env.AWS_BUCKET_NAME,
-        Key: `${req.file.originalname}`,
-        Body: req.file.buffer
-    }
+exports.upload = (fileDetails = uploadDetails) => multer({
+    storage: multerS3({
+        s3,
+        bucket: process.env.AWS_BUCKET_NAME,
+        acl: fileDetails.acl,
+        key: (req, file, cb) => {
+            let newFilename = `${fileDetails.folder}/${file.originalname}`;
+            newFilename += '-' + Date.now() + path.extname(file.originalname);
+            cb(null, newFilename);
+        }
+    }),
+    limits: fileDetails.fileSize,
+})[fileDetails.style](fileDetails.fieldName);
 
-    s3.upload(params, async (error, data) => {
-        if (error) return res.render('error', err);
+exports.createImage = async (req, res, next) => {
+    try{
         await Image.create({
             ...req.body,
-            link: data.Location,
-            key: data.key
+            key: req.file.key,
+            link: req.file.location
         });
 
         return res.redirect('/');
-    });
+    }catch(err){
+        return res.render('error', err);
+    }
 }
 
 exports.fetchImages = async (req, res, next) => {
     try{
-
-        return res.render('home');
+        const images = await Image.find({});
+        return res.render('home', {images});
     }catch(err){
         return res.render('error', err);
     }

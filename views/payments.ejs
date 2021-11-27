@@ -16,5 +16,17 @@
         <p>View records of images that have been purchased.</p>
         <a href="/">Purchase an Image</a>
     </section>
+
+    <section class="payments">
+        <% payments.forEach(function(payment){ %>
+            <div>
+                <img src="<%= payment.image.link %>" alt=""/>
+                <p>Price: <%= payment.image.price %> Naira</p>
+                <p>TX Reference: <%= payment.reference %></p>
+                <p>Time of Purchase: <%= payment.createdAt.toDateString() %></p>
+            </div>
+
+        <% }); %>
+    </section>
 </body>
 </html>

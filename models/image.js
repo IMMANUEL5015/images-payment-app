@@ -4,6 +4,7 @@ const imageSchema = mongoose.Schema({
     price: {type: Number, required: [true, 'Please provide image price!']},
     link: {type: String, required: [true, 'Please provide image link!']},
     description: String,
+    key: String,
     createdAt: {type: Date, default: Date.now}
 });
 

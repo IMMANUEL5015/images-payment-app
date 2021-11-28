@@ -77,3 +77,21 @@ form button{
     border: none;
     font-size: 1.2rem;
 }
+
+@media screen and (max-width: 425px){
+    section.hero{
+        width: 90%
+    }
+
+    form{
+        width: 90%;
+    }
+
+    section.hero h1{
+        font-size: 1.5rem;
+    }
+
+    section.hero p{
+        font-size: 1rem;
+    }
+}

@@ -46,3 +46,41 @@ section.hero a{
 .payments img{
     width: 100%;
 }
+
+@media screen and (max-width: 768px){
+    .payments{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+@media screen and (max-width: 425px){
+    .payments{
+        grid-template-columns: 1fr;
+    }
+
+    section.hero div{
+        display: flex;
+        flex-direction: column;
+    }
+
+    section.hero div a{
+        margin-bottom: 20px;
+    }
+
+    section.hero h1{
+        font-size: 1.5rem;
+    }
+
+    section.hero p{
+        font-size: 1rem;
+    }
+
+    section.hero{
+        width: 90%;
+    }
+
+    .payments{
+        width: 90%;
+    }
+}

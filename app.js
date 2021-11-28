@@ -13,6 +13,6 @@ mongoose.connect(process.env.MONGODB_URI)
 
 app.use(routes);
 
-app.all('*', image.fetchImages);
+app.all('*', (req, res) => res.render('error'));
 
 module.exports = app;

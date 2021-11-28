@@ -19,3 +19,17 @@ div{
     color: purple;
     font-weight: bold;
 }
+
+@media screen and (max-width: 768px){
+    div{
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 768px){
+    div{
+        padding-left: 20px;
+        padding-right: 20px;
+        box-sizing: border-box;
+    }
+}
